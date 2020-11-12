@@ -1,0 +1,27 @@
+{
+  "name": "use-constructor-hook",
+  "version": "0.0.1",
+  "description": "Simple contructor simulator hook for React functional components",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ElvisGastelum/useConstructor.git"
+  },
+  "keywords": [
+    "useConstructor",
+    "Hook",
+    "Custom Hook"
+  ],
+  "author": "Elvis Gastelum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElvisGastelum/useConstructor/issues"
+  },
+  "homepage": "https://github.com/ElvisGastelum/useConstructor#readme",
+  "dependencies": {
+    "react": "^17.0.1"
+  }
+}
