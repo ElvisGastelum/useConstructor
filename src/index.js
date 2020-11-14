@@ -1,15 +1,42 @@
-import { useRef } from 'react'
+import { useRef } from 'react';
 
+/**
+ * useConstructor is a custom hook for do something
+ * before the first component render
+ *
+ * Example:
+ * import React, { useState } from 'react'
+ * import { useConstructor } from 'use-constructor-hook'
+ *
+ * import { fetchDataFromApi } from './api.js'
+ *
+ * const App = () => {
+ *   const [dataFetched, setDataFetched] = useState(undefined)
+ *   useConstructor(async () => {
+ *     const response = await fetchDataFromApi()
+ *   })
+ *
+ *   return (
+ *     <div>{dataFetched || 'Loading data...'}<div>
+ *   )
+ * }
+ *
+ *
+ * @type {useConstructor.useConstructorType}
+ */
 export const useConstructor = (callBack = () => {}) => {
-    const hasBeenCalled = useRef(false)
+  const hasBeenCalled = useRef(false);
 
-    if (hasBeenCalled.current) return
+  if (hasBeenCalled.current) return;
 
-    if (typeof callBack !== 'function') {
-        throw new Error('You need pass a callback function as first param')
-    }
+  if (typeof callBack !== 'function') {
+    throw new Error('You need pass callback function as first param');
+  }
 
-    callBack()
+  async function init() {
+    await callBack();
+    hasBeenCalled.current = true;
+  }
 
-    hasBeenCalled.current = true
-}
+  init();
+};
