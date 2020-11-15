@@ -22,7 +22,7 @@ import { useRef } from 'react';
  * }
  *
  *
- * @type {useConstructor.useConstructorType}
+ * @type {import('use-constructor-hook').useConstructor}
  */
 export const useConstructor = (callBack = () => {}) => {
   const hasBeenCalled = useRef(false);
