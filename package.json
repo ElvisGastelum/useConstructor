@@ -1,6 +1,6 @@
 {
   "name": "use-constructor-hook",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple contructor simulator hook for React functional components",
   "main": "src/index.js",
   "types": "types.d.ts",
